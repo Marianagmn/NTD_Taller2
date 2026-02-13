@@ -27,11 +27,12 @@
     }
 
     .intro-card {
-      background: var(--card-bg);
-      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, rgba(0, 217, 126, 0.08), rgba(255, 107, 53, 0.08));
+      border: 2px solid rgba(45, 212, 191, 0.3);
       border-radius: 12px;
       padding: 1.25rem;
       backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0, 217, 126, 0.1);
     }
 
     @media (min-width: 640px) {
@@ -60,7 +61,7 @@
     .intro-hero h1 {
       font-size: 1.75rem;
       margin: 0.75rem 0;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      background: linear-gradient(135deg, #00d97e 0%, #ff6b35 50%, #ffd700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -170,11 +171,15 @@
     @media (min-width: 1024px) {
       .intro-section h2 {
         font-size: 1.5rem;
+        background: linear-gradient(135deg, #00d97e 0%, #ff6b35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     }
 
     .intro-section p {
-      color: var(--text-muted);
+      color: #cbd5e1;
       font-size: 0.95rem;
       line-height: 1.7;
     }
@@ -187,7 +192,7 @@
     }
 
     .intro-section ul {
-      color: var(--text-muted);
+      color: #cbd5e1;
       font-size: 0.95rem;
       line-height: 1.8;
       list-style-position: inside;
@@ -198,6 +203,12 @@
         font-size: 1rem;
         line-height: 2;
       }
+    }
+
+    .intro-section ul li:before {
+      content: '✦ ';
+      color: #ffd700;
+      font-weight: bold;
     }
 
     .stats-mini {
@@ -215,10 +226,12 @@
     }
 
     .stat-item {
-      background: rgba(45, 212, 191, 0.1);
+      background: linear-gradient(135deg, rgba(0, 217, 126, 0.15), rgba(255, 107, 53, 0.1));
       padding: 0.75rem;
       border-radius: 8px;
       text-align: center;
+      border: 1px solid rgba(0, 217, 126, 0.3);
+      transition: all 0.3s ease;
     }
 
     @media (min-width: 640px) {
@@ -227,8 +240,13 @@
       }
     }
 
+    .stat-item:hover {
+      box-shadow: 0 8px 20px rgba(0, 217, 126, 0.3);
+      border-color: rgba(255, 215, 0, 0.6);
+    }
+
     .stat-value {
-      color: var(--primary);
+      color: #00d97e;
       font-size: 1.25rem;
       font-weight: 700;
     }
@@ -246,8 +264,9 @@
     }
 
     .stat-label {
-      color: var(--text-muted);
+      color: #ffd700;
       font-size: 0.75rem;
+      font-weight: 600;
     }
 
     @media (min-width: 640px) {
