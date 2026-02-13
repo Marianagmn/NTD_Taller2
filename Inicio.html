@@ -3,120 +3,310 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bienvenida — Roronoa Zoro</title>
+  <title>Inicio — Roronoa Zoro</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .welcome-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .welcome-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .welcome-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem 0;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 1rem 0;
+    }
+
+    .hero-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12rem;
+      background: linear-gradient(180deg, rgba(45, 212, 191, 0.15), rgba(52, 211, 153, 0.05));
+      border: 2px solid var(--glass-border);
+      border-radius: 12px;
+      min-height: 400px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .welcome-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .welcome-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(52, 211, 153, 0.1));
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cta-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-description {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-box {
+      background: rgba(45, 212, 191, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
+      text-align: center;
+    }
+
+    .feature-box strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="brand">
-      <div class="logo" aria-hidden="true">
-        <span class="sword-icon">⚔️</span>
-      </div>
+      <div class="logo">⚔️</div>
       <div>
         <div class="brand-title">Roronoa Zoro</div>
         <div class="brand-subtitle">El Cazador de Piratas</div>
       </div>
     </div>
     <nav aria-label="principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre">Sobre Zoro</a>
-      <a href="#info">Técnicas</a>
+      <a href="Inicio.html">Inicio</a>
+      <a href="zoro.html">Introducción</a>
+      <a href="ficha.html">Ficha Completa</a>
     </nav>
   </header>
 
-  <main>
-    <div class="wrap">
-      <section class="hero" id="inicio" aria-labelledby="bienvenido">
-        <div class="hero-badge">🏴‍☠️ Tripulación Sombrero de Paja</div>
-        <h1 id="bienvenido">El Espadachín de las Tres Espadas</h1>
-        <p class="lead">Descubre la historia del legendario espadachín que busca convertirse en el mejor del mundo. Conoce sus técnicas, su lealtad inquebrantable y su camino hacia la grandeza.</p>
+  <main class="welcome-container">
+    <!-- SECCIÓN HÉROE -->
+    <section class="welcome-hero">
+      <div class="hero-content">
+        <h1>Bienvenido a la Leyenda</h1>
+        <p class="hero-badge" style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">🏴‍☠️ Tripulación del Sombrero de Paja</p>
+        <p>
+          Explora el mundo del legendario espadachín Roronoa Zoro, el combatiente más determinado que jamás ha existido en los mares. 
+          Descubre su historia épica, sus técnicas devastadoras, sus principios inquebrantables y su camino hacia la gloria.
+        </p>
+        <p>
+          Desde sus humildes comienzos como cazarrecompensas hasta convertirse en una leyenda viviente, Zoro ha demostrado que la verdadera fortaleza 
+          viene de la lealtad, el honor y la determinación sin límites.
+        </p>
+      </div>
+      <div class="hero-image">⚔️</div>
+    </section>
 
-        <div class="stats-mini">
-          <div class="stat-item">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Espadas</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">1.111B</div>
-            <div class="stat-label">Recompensa</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">∞</div>
-            <div class="stat-label">Determinación</div>
-          </div>
-        </div>
+    <!-- SECCIÓN DE PRESENTACIÓN -->
+    <section class="cta-section">
+      <h2 class="cta-title">Conoce a Zoro</h2>
+      <p class="cta-description">
+        Navega por nuestra completa guía dedicada a este extraordinario personaje. Desde su biografía hasta sus técnicas legendarias.
+      </p>
+      <div class="cta-buttons">
+        <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          📖 Introducción a Zoro
+        </a>
+        <a class="btn secondary" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          📋 Ver Ficha Completa
+        </a>
+      </div>
+    </section>
 
-        <div class="cta">
-          <a class="btn" href="zoro.html" id="conocerBtn">
-            <span>Conocer a Zoro</span>
-            <span class="btn-arrow">→</span>
+    <!-- NAVEGACIÓN RÁPIDA -->
+    <section aria-labelledby="navegacion-title">
+      <h2 id="navegacion-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Explora Secciones</h2>
+      <div class="welcome-grid">
+        <div class="welcome-card">
+          <div class="card-icon">📖</div>
+          <h3 class="card-title">Introducción</h3>
+          <p class="card-desc">
+            Una breve pero completa introducción a quién es Zoro, su rol en la tripulación y por qué es un personaje tan importante.
+          </p>
+          <a class="card-link" href="zoro.html">
+            Leer Introducción →
           </a>
-          <a class="btn secondary" href="#sobre">Ver resumen</a>
         </div>
 
-        <div class="hint">
-          <span class="hint-icon">💡</span>
-          <span>Consejo: añade un archivo <code>zoro.html</code> con la biografía completa y galería de imágenes.</span>
+        <div class="welcome-card">
+          <div class="card-icon">📋</div>
+          <h3 class="card-title">Ficha Completa</h3>
+          <p class="card-desc">
+            Toda la información detallada: biografía, técnicas de combate, datos curiosos, timeline y relaciones clave.
+          </p>
+          <a class="card-link" href="ficha.html">
+            Ver Ficha Completa →
+          </a>
         </div>
-      </section>
 
-      <aside class="card" id="sobre" aria-labelledby="resumen">
-        <h3 id="resumen">Datos Esenciales</h3>
-        <ul class="facts">
-          <li>
-            <span class="icon">⚔️</span>
-            <div>
-              <strong>Estilo de Combate</strong>
-              <span>Santoryu (Tres Espadas)</span>
-            </div>
-          </li>
-          <li>
-            <span class="icon">🎯</span>
-            <div>
-              <strong>Objetivo</strong>
-              <span>Mejor espadachín del mundo</span>
-            </div>
-          </li>
-          <li>
-            <span class="icon">💪</span>
-            <div>
-              <strong>Rol</strong>
-              <span>Combatiente & Mano Derecha</span>
-            </div>
-          </li>
-          <li>
-            <span class="icon">🌊</span>
-            <div>
-              <strong>Haki</strong>
-              <span>Armamento, Observación, Conquistador</span>
-            </div>
-          </li>
-        </ul>
-        <div class="card-footer">
-          <a class="btn" href="zoro.html">Ver Perfil Completo</a>
+        <div class="welcome-card">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">Técnicas</h3>
+          <p class="card-desc">
+            Descubre el Santoryu, Asura, Onigiri y todas las técnicas legendarias que hacen de Zoro un combatiente imbatible.
+          </p>
+          <a class="card-link" href="ficha.html#tecnicas">
+            Explorar Técnicas →
+          </a>
         </div>
-      </aside>
-    </div>
+      </div>
+    </section>
 
-    <section class="features">
-      <div class="wrap">
-        <h2>Características Legendarias</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🗡️</div>
-            <h3>Maestro Espadachín</h3>
-            <p>Domina el estilo único de tres espadas, una técnica que solo él puede ejecutar a la perfección.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Lealtad Absoluta</h3>
-            <p>Compromiso inquebrantable con Luffy y la tripulación del Sombrero de Paja.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Poder Creciente</h3>
-            <p>Constantemente supera sus límites para enfrentar enemigos cada vez más poderosos.</p>
-          </div>
+    <!-- CARACTERÍSTICAS DESTACADAS -->
+    <section style="margin-top: 3rem;">
+      <h2 style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo Que lo Hace Único</h2>
+      <div class="features-section">
+        <div class="feature-box">
+          <strong>🗡️ Maestro del Santoryu</strong>
+          <p>El único espadachín capaz de dominar el estilo de tres espadas, combinando potencia, velocidad y precisión.</p>
+        </div>
+        <div class="feature-box">
+          <strong>💪 Determinación Inquebrantable</strong>
+          <p>Una voluntad de hierro que lo impulsa a superar cada límite y alcanzar nuevas alturas de poder constantemente.</p>
+        </div>
+        <div class="feature-box">
+          <strong>🛡️ Lealtad Absoluta</strong>
+          <p>Disposición total a sacrificar su vida por sus amigos y capitán, demostrando el verdadero significado del honor.</p>
+        </div>
+        <div class="feature-box">
+          <strong>⚡ Dominio del Haki</strong>
+          <p>Control magistral del Haki del Armamento, Observación y recientemente del legendario Haki del Conquistador.</p>
+        </div>
+        <div class="feature-box">
+          <strong>🎯 Liderazgo Estratégico</strong>
+          <p>Como segundo al mando de Luffy, demuestra inteligencia táctica y capacidad para guiar a la tripulación en batalla.</p>
+        </div>
+        <div class="feature-box">
+          <strong>🔥 Poder Creciente</strong>
+          <p>Constantemente evoluciona y se fortalece, enfrentándose a enemigos cada vez más poderosos y legendarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTADÍSTICAS RÁPIDAS -->
+    <section style="margin-top: 3rem; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 2rem;">
+      <h2 style="color: var(--accent); margin-bottom: 1.5rem;">Datos Rápidos</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+        <div style="text-align: center;">
+          <div style="color: var(--primary); font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">3</div>
+          <div style="color: var(--text-muted);">Espadas</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="color: var(--primary); font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">1.111B</div>
+          <div style="color: var(--text-muted);">Recompensa</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="color: var(--primary); font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Santoryu</div>
+          <div style="color: var(--text-muted);">Estilo Único</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="color: var(--primary); font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">∞</div>
+          <div style="color: var(--text-muted);">Determinación</div>
         </div>
       </div>
     </section>
@@ -124,7 +314,7 @@
 
   <footer>
     <div class="footer-content">
-      <p>© 2026 — Sitio de fans dedicado a Roronoa Zoro de One Piece</p>
+      <p>© 2026 — Sitio dedicado a Roronoa Zoro de One Piece</p>
       <p class="footer-note">One Piece es propiedad de Eiichiro Oda y Shueisha</p>
     </div>
   </footer>
