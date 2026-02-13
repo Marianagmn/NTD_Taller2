@@ -453,6 +453,57 @@
     footer {
       animation: slideInUp 0.6s ease-out 0.5s both;
     }
+    
+    /* Fondo animado para Zoro: capas, parallax y gradiente */
+    #bg-wrap {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+      display: block;
+      transform: translateZ(0);
+      transition: opacity 0.25s linear;
+    }
+
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      will-change: transform, opacity;
+    }
+
+    .bg-image {
+      background-image: url('zoro-bg-4k.jpg'); /* Reemplaza por tu imagen 4K o usa URL */
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: saturate(0.9) contrast(1.05) brightness(0.95);
+      transform: translate3d(0,0,0);
+    }
+
+    .bg-gradient {
+      background: linear-gradient(180deg, rgba(2,6,23,0.35), rgba(0,0,0,0.6) 60%);
+      mix-blend-mode: multiply;
+      opacity: 0.9;
+    }
+
+    #bg-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Asegurar que el contenido esté por encima */
+    header, main, footer, .intro-panel, .intro-card {
+      position: relative;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -542,5 +593,45 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function(){
+      const bgImage = document.querySelector('.bg-image');
+      const bgWrap = document.getElementById('bg-wrap');
+      let width = window.innerWidth, height = window.innerHeight;
+
+      // Parallax suave por movimiento del ratón
+      let rx = 0, ry = 0;
+      let cx = 0, cy = 0;
+
+      function onMove(e){
+        const x = (e.clientX / width) - 0.5;
+        const y = (e.clientY / height) - 0.5;
+        rx = x * 30;
+        ry = y * 18;
+      }
+
+      function animate(){
+        cx += (rx - cx) * 0.08;
+        cy += (ry - cy) * 0.08;
+        if(bgImage) bgImage.style.transform = `translate3d(${cx*0.8}px, ${cy*0.6}px, 0) scale(1.02)`;
+        const gradient = document.querySelector('.bg-gradient');
+        if(gradient) gradient.style.transform = `translate3d(${cx*0.4}px, ${cy*0.25}px, 0)`;
+        requestAnimationFrame(animate);
+      }
+
+      // Reducir actividad cuando pestaña oculta
+      document.addEventListener('visibilitychange', ()=>{
+        if(document.hidden){
+          bgWrap.style.opacity = '0.8';
+        } else {
+          bgWrap.style.opacity = '1';
+        }
+      });
+
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('resize', ()=>{ width = window.innerWidth; height = window.innerHeight; });
+      animate();
+    })();
+  </script>
 </body>
 </html>
