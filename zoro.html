@@ -6,6 +6,49 @@
   <title>Zoro — Introducción</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Accesibilidad: Respeta preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Accesibilidad: Focus visible para navegación por teclado */
+    :focus-visible {
+      outline: 3px solid #ffd700;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Skip link accesible */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #00d97e;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      z-index: 100;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .skip-to-content:focus-visible {
+      top: 0;
+    }
+
+    /* Accesibilidad: Tamaños mínimos de hitbox */
+    button, a.btn, .intro-btn, [tabindex] {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .intro-panel {
       max-width: 900px;
       margin: 1.5rem auto;
@@ -413,28 +456,31 @@
   </style>
 </head>
 <body>
-  <header>
+  <!-- Accesibilidad: Skip link para saltar al contenido principal -->
+  <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+  
+  <header role="banner">
     <div class="brand">
-      <div class="logo">⚔️</div>
+      <div class="logo" aria-hidden="true">⚔️</div>
       <div>
         <div class="brand-title">Roronoa Zoro</div>
         <div class="brand-subtitle">El Cazador de Piratas</div>
       </div>
     </div>
-    <nav aria-label="principal">
+    <nav aria-label="Navegación principal">
       <a href="Inicio.html">Inicio</a>
-      <a href="zoro.html">Introducción</a>
+      <a href="zoro.html" aria-current="page">Introducción</a>
       <a href="ficha.html">Ficha Completa</a>
     </nav>
   </header>
 
-  <main class="intro-panel">
-    <div class="breadcrumb">
+  <main id="main-content" class="intro-panel" role="main">
+    <div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
       <a href="Inicio.html">Home</a> / Introducción
     </div>
 
     <article class="intro-card">
-      <section class="intro-hero" aria-labelledby="intro-title">
+      <section class="intro-hero" role="region" aria-labelledby="intro-title">
         <h1 id="intro-title">Zoro — Introducción</h1>
         <p>Conoce al legendario espadachín que busca convertirse en el mejor del mundo. Un viaje de determinación, honor y poder sin igual.</p>
       </section>
