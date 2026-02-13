@@ -255,6 +255,142 @@
         font-size: 0.85rem;
       }
     }
+
+    /* ===== ANIMACIONES ===== */
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(45, 212, 191, 0.6);
+        transform: scale(1.02);
+      }
+    }
+
+    header {
+      animation: slideInDown 0.6s ease-out;
+    }
+
+    .breadcrumb {
+      animation: fadeIn 0.6s ease-out 0.2s both;
+    }
+
+    .intro-card {
+      animation: slideInUp 0.8s ease-out 0.1s both;
+    }
+
+    .intro-hero h1 {
+      animation: slideInUp 0.8s ease-out 0.2s both;
+    }
+
+    .intro-hero p {
+      animation: slideInUp 0.8s ease-out 0.3s both;
+    }
+
+    .intro-section {
+      animation: slideInUp 0.7s ease-out calc(0.1s * var(--sindex, 0)) both;
+    }
+
+    .intro-section:nth-child(2) { --sindex: 1; }
+    .intro-section:nth-child(3) { --sindex: 2; }
+    .intro-section:nth-child(4) { --sindex: 3; }
+
+    .stat-item {
+      animation: scaleIn 0.6s ease-out calc(0.1s * var(--statindex, 0)) both;
+    }
+
+    .stats-mini .stat-item:nth-child(1) { --statindex: 0; }
+    .stats-mini .stat-item:nth-child(2) { --statindex: 1; }
+    .stats-mini .stat-item:nth-child(3) { --statindex: 2; }
+
+    .stat-item:hover {
+      animation: glow 1.5s ease-in-out infinite;
+    }
+
+    .cta-group {
+      animation: slideInUp 0.8s ease-out 0.4s both;
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    footer {
+      animation: slideInUp 0.6s ease-out 0.5s both;
+    }
   </style>
 </head>
 <body>
