@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -42,7 +43,10 @@
     }
 
     /* Accesibilidad: Tamaños mínimos de hitbox (44x44px recomendado) */
-    button, a.btn, .card-link, [tabindex] {
+    button,
+    a.btn,
+    .card-link,
+    [tabindex] {
       min-height: 44px;
       display: inline-flex;
       align-items: center;
@@ -174,8 +178,15 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
 
     .welcome-grid {
@@ -458,15 +469,18 @@
       transition: all 0.3s ease;
     }
 
-    .feature-box:nth-child(1), .feature-box:nth-child(4) {
+    .feature-box:nth-child(1),
+    .feature-box:nth-child(4) {
       border-color: #00d97e;
     }
 
-    .feature-box:nth-child(2), .feature-box:nth-child(5) {
+    .feature-box:nth-child(2),
+    .feature-box:nth-child(5) {
       border-color: #ff6b35;
     }
 
-    .feature-box:nth-child(3), .feature-box:nth-child(6) {
+    .feature-box:nth-child(3),
+    .feature-box:nth-child(6) {
       border-color: #ffd700;
     }
 
@@ -519,6 +533,7 @@
         opacity: 0;
         transform: translateY(-30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -530,6 +545,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -540,6 +556,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -550,6 +567,7 @@
         opacity: 0;
         transform: scale(0.95);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -557,36 +575,48 @@
     }
 
     @keyframes pulse {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 1;
       }
+
       50% {
         opacity: 0.7;
       }
     }
 
     @keyframes glow {
-      0%, 100% {
+
+      0%,
+      100% {
         box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
       }
+
       50% {
         box-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
       }
     }
 
     @keyframes glowGreen {
-      0%, 100% {
+
+      0%,
+      100% {
         box-shadow: 0 0 20px rgba(0, 217, 126, 0.3);
       }
+
       50% {
         box-shadow: 0 0 40px rgba(0, 217, 126, 0.6);
       }
     }
 
     @keyframes glowGold {
-      0%, 100% {
+
+      0%,
+      100% {
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
       }
+
       50% {
         box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
       }
@@ -596,6 +626,7 @@
       0% {
         background-position: -1000px 0;
       }
+
       100% {
         background-position: 1000px 0;
       }
@@ -621,9 +652,17 @@
       animation: slideInUp 0.6s ease-out calc(0.05s * var(--index, 0)) both;
     }
 
-    .welcome-card:nth-child(1) { --index: 1; }
-    .welcome-card:nth-child(2) { --index: 2; }
-    .welcome-card:nth-child(3) { --index: 3; }
+    .welcome-card:nth-child(1) {
+      --index: 1;
+    }
+
+    .welcome-card:nth-child(2) {
+      --index: 2;
+    }
+
+    .welcome-card:nth-child(3) {
+      --index: 3;
+    }
 
     .cta-section {
       animation: slideInUp 0.8s ease-out 0.4s both;
@@ -633,12 +672,29 @@
       animation: slideInUp 0.6s ease-out calc(0.07s * var(--findex, 0)) both;
     }
 
-    .feature-box:nth-child(1) { --findex: 1; }
-    .feature-box:nth-child(2) { --findex: 2; }
-    .feature-box:nth-child(3) { --findex: 3; }
-    .feature-box:nth-child(4) { --findex: 4; }
-    .feature-box:nth-child(5) { --findex: 5; }
-    .feature-box:nth-child(6) { --findex: 6; }
+    .feature-box:nth-child(1) {
+      --findex: 1;
+    }
+
+    .feature-box:nth-child(2) {
+      --findex: 2;
+    }
+
+    .feature-box:nth-child(3) {
+      --findex: 3;
+    }
+
+    .feature-box:nth-child(4) {
+      --findex: 4;
+    }
+
+    .feature-box:nth-child(5) {
+      --findex: 5;
+    }
+
+    .feature-box:nth-child(6) {
+      --findex: 6;
+    }
 
     .welcome-card:hover {
       transform: translateY(-8px);
@@ -676,10 +732,11 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Accesibilidad: Skip link para saltar al contenido principal -->
   <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
-  
+
   <header role="banner">
     <div class="brand">
       <div class="logo" aria-hidden="true">⚔️</div>
@@ -700,13 +757,17 @@
     <section class="welcome-hero" role="region" aria-labelledby="hero-title">
       <div class="hero-content">
         <h1 id="hero-title">Bienvenido a la Leyenda</h1>
-        <p class="hero-badge" style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">🏴‍☠️ Tripulación del Sombrero de Paja</p>
+        <p class="hero-badge" style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">🏴‍☠️ Tripulación
+          del Sombrero de Paja</p>
         <p>
-          Explora el mundo del legendario espadachín Roronoa Zoro, el combatiente más determinado que jamás ha existido en los mares. 
-          Descubre su historia épica, sus técnicas devastadoras, sus principios inquebrantables y su camino hacia la gloria.
+          Explora el mundo del legendario espadachín Roronoa Zoro, el combatiente más determinado que jamás ha existido
+          en los mares.
+          Descubre su historia épica, sus técnicas devastadoras, sus principios inquebrantables y su camino hacia la
+          gloria.
         </p>
         <p>
-          Desde sus humildes comienzos como cazarrecompensas hasta convertirse en una leyenda viviente, Zoro ha demostrado que la verdadera fortaleza 
+          Desde sus humildes comienzos como cazarrecompensas hasta convertirse en una leyenda viviente, Zoro ha
+          demostrado que la verdadera fortaleza
           viene de la lealtad, el honor y la determinación sin límites.
         </p>
       </div>
@@ -717,27 +778,84 @@
     <section class="cta-section" role="region" aria-labelledby="cta-title">
       <h2 id="cta-title" class="cta-title">Conoce a Zoro</h2>
       <p class="cta-description">
-        Navega por nuestra completa guía dedicada a este extraordinario personaje. Desde su biografía hasta sus técnicas legendarias.
+        Navega por nuestra completa guía dedicada a este extraordinario personaje. Desde su biografía hasta sus técnicas
+        legendarias.
       </p>
       <div class="cta-buttons" role="group" aria-label="Opciones de navegación principal">
-        <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;" aria-label="Ver introducción de Zoro">
+        <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;"
+          aria-label="Ver introducción de Zoro">
           📖 Introducción a Zoro
         </a>
-        <a class="btn secondary" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;" aria-label="Ver ficha completa de Zoro">
+        <a class="btn secondary" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;"
+          aria-label="Ver ficha completa de Zoro">
           📋 Ver Ficha Completa
         </a>
       </div>
     </section>
 
+
+    <!--   BIOGRAFIA COMPLETA -->
+
+    <section id="biografia-completa" style="margin-top: 3rem;">
+      <h2 style="color: var(--accent); margin-bottom: 1.5rem;">
+        Biografía Completa
+      </h2>
+
+      <div class="feature-box">
+        <p>
+          Roronoa Zoro, conocido como “El Cazador de Piratas”, es el primer miembro
+          que se unió a Monkey D. Luffy y el principal combatiente de los Piratas
+          del Sombrero de Paja. Es uno de los dos espadachines de la tripulación,
+          uno de los oficiales principales de la Gran Flota del Sombrero de Paja
+          y anteriormente trabajó como cazarrecompensas.
+        </p>
+
+        <p>
+          Nació en el East Blue y es hijo de Tera y Roronoa Arashi. Es descendiente
+          de la familia Shimotsuki del País de Wano y del legendario samurái
+          Shimotsuki Ryuma. Desde pequeño mostró una determinación inquebrantable
+          por convertirse en el mejor espadachín del mundo, promesa que hizo tras
+          la muerte de su amiga y rival Kuina.
+        </p>
+
+        <p>
+          Fue el primer integrante en unirse oficialmente a la tripulación y es
+          considerado parte del llamado “Trío Monstruoso” junto a Luffy y Sanji,
+          debido a su enorme poder en combate. Además, Zoro es uno de los Once
+          Supernovas pertenecientes a la denominada “Peor Generación”, un grupo
+          de piratas novatos con recompensas superiores a 100 millones de berries.
+        </p>
+
+        <p>
+          A lo largo de la serie, su recompensa ha aumentado considerablemente:
+          comenzó con 60.000.000 de berries tras el arco de Arabasta, aumentó a
+          120.000.000 después del incidente de Enies Lobby, luego a 320.000.000
+          tras Dressrosa, y finalmente alcanzó los 1.111.000.000 de berries después
+          del asalto a Onigashima, siendo la segunda recompensa más alta de la
+          tripulación, solo superada por la de su capitán.
+        </p>
+
+        <p>
+          Su estilo de combate, el Santoryu (estilo de tres espadas), lo distingue
+          como uno de los espadachines más temidos del mundo. Maneja dos espadas
+          con las manos y una tercera en la boca, demostrando una fuerza y
+          resistencia extraordinarias. También domina el Haki del Armamento,
+          Observación y el Haki del Conquistador.
+        </p>
+      </div>
+    </section>
+
     <!-- NAVEGACIÓN RÁPIDA -->
     <section role="region" aria-labelledby="navegacion-title">
-      <h2 id="navegacion-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Explora Secciones</h2>
+      <h2 id="navegacion-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Explora
+        Secciones</h2>
       <div class="welcome-grid" role="list">
         <div class="welcome-card" role="listitem">
           <div class="card-icon" aria-hidden="true">📖</div>
           <h3 class="card-title">Introducción</h3>
           <p class="card-desc">
-            Una breve pero completa introducción a quién es Zoro, su rol en la tripulación y por qué es un personaje tan importante.
+            Una breve pero completa introducción a quién es Zoro, su rol en la tripulación y por qué es un personaje tan
+            importante.
           </p>
           <a class="card-link" href="zoro.html" aria-label="Ir a introducción de Zoro">
             Leer Introducción →
@@ -759,7 +877,8 @@
           <div class="card-icon" aria-hidden="true">⚡</div>
           <h3 class="card-title">Técnicas</h3>
           <p class="card-desc">
-            Descubre el Santoryu, Asura, Onigiri y todas las técnicas legendarias que hacen de Zoro un combatiente imbatible.
+            Descubre el Santoryu, Asura, Onigiri y todas las técnicas legendarias que hacen de Zoro un combatiente
+            imbatible.
           </p>
           <a class="card-link" href="ficha.html#tecnicas" aria-label="Ir a técnicas de Zoro">
             Explorar Técnicas →
@@ -770,37 +889,45 @@
 
     <!-- CARACTERÍSTICAS DESTACADAS -->
     <section role="region" aria-labelledby="features-title" style="margin-top: 3rem;">
-      <h2 id="features-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo Que lo Hace Único</h2>
+      <h2 id="features-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo Que lo Hace
+        Único</h2>
       <div class="features-section" role="list">
         <div class="feature-box" role="listitem">
           <strong aria-hidden="false">🗡️ Maestro del Santoryu</strong>
-          <p>El único espadachín capaz de dominar el estilo de tres espadas, combinando potencia, velocidad y precisión.</p>
+          <p>El único espadachín capaz de dominar el estilo de tres espadas, combinando potencia, velocidad y precisión.
+          </p>
         </div>
         <div class="feature-box" role="listitem">
           <strong>💪 Determinación Inquebrantable</strong>
-          <p>Una voluntad de hierro que lo impulsa a superar cada límite y alcanzar nuevas alturas de poder constantemente.</p>
+          <p>Una voluntad de hierro que lo impulsa a superar cada límite y alcanzar nuevas alturas de poder
+            constantemente.</p>
         </div>
         <div class="feature-box" role="listitem">
           <strong>🛡️ Lealtad Absoluta</strong>
-          <p>Disposición total a sacrificar su vida por sus amigos y capitán, demostrando el verdadero significado del honor.</p>
+          <p>Disposición total a sacrificar su vida por sus amigos y capitán, demostrando el verdadero significado del
+            honor.</p>
         </div>
         <div class="feature-box" role="listitem">
           <strong>⚡ Dominio del Haki</strong>
-          <p>Control magistral del Haki del Armamento, Observación y recientemente del legendario Haki del Conquistador.</p>
+          <p>Control magistral del Haki del Armamento, Observación y recientemente del legendario Haki del Conquistador.
+          </p>
         </div>
         <div class="feature-box" role="listitem">
           <strong>🎯 Liderazgo Estratégico</strong>
-          <p>Como segundo al mando de Luffy, demuestra inteligencia táctica y capacidad para guiar a la tripulación en batalla.</p>
+          <p>Como segundo al mando de Luffy, demuestra inteligencia táctica y capacidad para guiar a la tripulación en
+            batalla.</p>
         </div>
         <div class="feature-box" role="listitem">
           <strong>🔥 Poder Creciente</strong>
-          <p>Constantemente evoluciona y se fortalece, enfrentándose a enemigos cada vez más poderosos y legendarios.</p>
+          <p>Constantemente evoluciona y se fortalece, enfrentándose a enemigos cada vez más poderosos y legendarios.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ESTADÍSTICAS RÁPIDAS -->
-    <section style="margin-top: 3rem; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 2rem;">
+    <section
+      style="margin-top: 3rem; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 2rem;">
       <h2 style="color: var(--accent); margin-bottom: 1.5rem;">Datos Rápidos</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
         <div style="text-align: center;">
@@ -832,4 +959,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
