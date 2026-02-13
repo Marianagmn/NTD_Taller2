@@ -9,27 +9,47 @@
     .welcome-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
+      padding: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .welcome-container {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .welcome-container {
+        padding: 2rem 1.5rem;
+      }
     }
 
     .welcome-hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
       align-items: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .welcome-hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .welcome-hero {
+        gap: 3rem;
+        margin-bottom: 4rem;
       }
     }
 
     .hero-content h1 {
-      font-size: 3rem;
-      margin: 0 0 1rem 0;
+      font-size: 1.75rem;
+      margin: 0 0 0.5rem 0;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -37,23 +57,64 @@
       line-height: 1.2;
     }
 
+    @media (min-width: 640px) {
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content h1 {
+        font-size: 3rem;
+        margin: 0 0 1rem 0;
+      }
+    }
+
     .hero-content p {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin: 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0.75rem 0;
+    }
+
+    @media (min-width: 640px) {
+      .hero-content p {
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
     }
 
     .hero-image {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12rem;
+      font-size: 5rem;
       background: linear-gradient(180deg, rgba(45, 212, 191, 0.15), rgba(52, 211, 153, 0.05));
       border: 2px solid var(--glass-border);
       border-radius: 12px;
-      min-height: 400px;
+      min-height: 250px;
       animation: float 3s ease-in-out infinite;
+    }
+
+    @media (min-width: 768px) {
+      .hero-image {
+        font-size: 8rem;
+        min-height: 300px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-image {
+        font-size: 12rem;
+        min-height: 400px;
+      }
     }
 
     @keyframes float {
@@ -63,18 +124,46 @@
 
     .welcome-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .welcome-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .welcome-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
     }
 
     .welcome-card {
       background: var(--card-bg);
       border: 1px solid var(--glass-border);
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1rem;
       backdrop-filter: blur(10px);
       transition: transform 0.3s, border-color 0.3s;
+    }
+
+    @media (min-width: 640px) {
+      .welcome-card {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .welcome-card {
+        padding: 1.5rem;
+      }
     }
 
     .welcome-card:hover {
@@ -83,29 +172,69 @@
     }
 
     .card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .card-icon {
+        font-size: 2.5rem;
+      }
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-bottom: 0.5rem;
       color: var(--accent);
     }
 
+    @media (min-width: 640px) {
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .card-title {
+        font-size: 1.2rem;
+      }
+    }
+
     .card-desc {
       color: var(--text-muted);
+      font-size: 0.9rem;
       line-height: 1.6;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-desc {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
     }
 
     .card-link {
       color: var(--primary);
       text-decoration: none;
+      font-size: 0.9rem;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-link {
+        font-size: 0.95rem;
+      }
     }
 
     .card-link:hover {
@@ -116,55 +245,143 @@
       background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(52, 211, 153, 0.1));
       border: 1px solid var(--glass-border);
       border-radius: 12px;
-      padding: 3rem 2rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       margin-bottom: 2rem;
     }
 
+    @media (min-width: 640px) {
+      .cta-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-section {
+        padding: 3rem 2rem;
+      }
+    }
+
     .cta-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .cta-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
     }
 
     .cta-description {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 640px) {
+      .cta-description {
+        font-size: 1rem;
+        margin-bottom: 1.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cta-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
     }
 
     .cta-buttons {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
+    @media (min-width: 640px) {
+      .cta-buttons {
+        gap: 1rem;
+      }
+    }
+
     .features-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .features-section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .features-section {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
     }
 
     .feature-box {
       background: rgba(45, 212, 191, 0.05);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 10px;
       border-left: 4px solid var(--primary);
       text-align: center;
     }
 
+    @media (min-width: 640px) {
+      .feature-box {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .feature-box {
+        padding: 1.5rem;
+      }
+    }
+
     .feature-box strong {
       color: var(--primary);
       display: block;
+      font-size: 1rem;
       margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .feature-box strong {
+        font-size: 1.05rem;
+      }
     }
 
     .feature-box p {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 640px) {
+      .feature-box p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
     }
   </style>
 </head>
