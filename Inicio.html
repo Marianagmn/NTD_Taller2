@@ -3,128 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bienvenida — Zoro</title>
-  <style>
-    :root{
-      --bg:#0f172a;
-      --card:#0b1220;
-      --accent:#34d399;
-      --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,#071025 0%, #081226 60%);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-    header{padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{
-      width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#0ea5a4,#06b6d4);
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 4px 18px rgba(2,6,23,0.6)
-    }
-    nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.95rem}
-    main{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
-    .wrap{max-width:980px;width:100%;display:grid;grid-template-columns:1fr;gap:1.25rem}
-    @media(min-width:820px){ .wrap{grid-template-columns:1fr 320px} }
-    .hero{
-      padding:1.5rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      box-shadow:0 6px 30px rgba(2,6,23,0.6);
-      border:1px solid var(--glass);
-    }
-    h1{margin:0 0 .25rem 0;font-size:1.6rem}
-    p.lead{margin:0;color:var(--muted);line-height:1.5}
-    .cta{margin-top:1rem;display:flex;gap:.75rem;align-items:center}
-    .btn{
-      background:var(--accent);color:#022;border:0;padding:.6rem .9rem;border-radius:8px;font-weight:700;cursor:pointer;text-decoration:none;
-      box-shadow:0 8px 20px rgba(52,211,153,0.08);
-    }
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
-    .card{
-      background:rgba(255,255,255,0.02);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
-      color:var(--muted);
-    }
-    .facts{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
-    .facts li{display:flex;gap:.5rem;align-items:center}
-    .icon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.03);display:inline-flex;align-items:center;justify-content:center}
-    footer{padding:1rem;text-align:center;color:var(--muted);font-size:.9rem}
-    a { color:inherit }
-  </style>
+  <title>Bienvenida — Roronoa Zoro</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="brand">
-      <div class="logo" aria-hidden="true">Z</div>
+      <div class="logo" aria-hidden="true">
+        <span class="sword-icon">⚔️</span>
+      </div>
       <div>
-        <div style="font-weight:700">Zoro — Fandom</div>
-        <div style="font-size:.85rem;color:var(--muted)">Portal introductorio</div>
+        <div class="brand-title">Roronoa Zoro</div>
+        <div class="brand-subtitle">El Cazador de Piratas</div>
       </div>
     </div>
     <nav aria-label="principal">
       <a href="#inicio">Inicio</a>
       <a href="#sobre">Sobre Zoro</a>
-      <a href="#info">Más info</a>
+      <a href="#info">Técnicas</a>
     </nav>
   </header>
 
   <main>
     <div class="wrap">
       <section class="hero" id="inicio" aria-labelledby="bienvenido">
-        <h1 id="bienvenido">Bienvenido a la página de Zoro</h1>
-        <p class="lead">Esta es una página introductoria que te llevará a la información detallada de nuestro personaje: historia, datos, imágenes y curiosidades. Haz clic en "Conocer a Zoro" para continuar.</p>
+        <div class="hero-badge">🏴‍☠️ Tripulación Sombrero de Paja</div>
+        <h1 id="bienvenido">El Espadachín de las Tres Espadas</h1>
+        <p class="lead">Descubre la historia del legendario espadachín que busca convertirse en el mejor del mundo. Conoce sus técnicas, su lealtad inquebrantable y su camino hacia la grandeza.</p>
+
+        <div class="stats-mini">
+          <div class="stat-item">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Espadas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">1.111B</div>
+            <div class="stat-label">Recompensa</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">∞</div>
+            <div class="stat-label">Determinación</div>
+          </div>
+        </div>
 
         <div class="cta">
-          <a class="btn" href="zoro.html" id="conocerBtn">Conocer a Zoro</a>
+          <a class="btn" href="zoro.html" id="conocerBtn">
+            <span>Conocer a Zoro</span>
+            <span class="btn-arrow">→</span>
+          </a>
           <a class="btn secondary" href="#sobre">Ver resumen</a>
         </div>
 
-        <div style="margin-top:1.25rem;color:var(--muted);font-size:.95rem">
-          Consejo: si estás creando el sitio, añade un archivo <code>zoro.html</code> con la biografía y recursos multimedia.
+        <div class="hint">
+          <span class="hint-icon">💡</span>
+          <span>Consejo: añade un archivo <code>zoro.html</code> con la biografía completa y galería de imágenes.</span>
         </div>
       </section>
 
       <aside class="card" id="sobre" aria-labelledby="resumen">
-        <h3 id="resumen" style="margin-top:0;color:#e6eef8">Resumen rápido</h3>
+        <h3 id="resumen">Datos Esenciales</h3>
         <ul class="facts">
-          <li><span class="icon">🗡️</span><strong>Arma:</strong>&nbsp;Espadas</li>
-          <li><span class="icon">🌊</span><strong>Mundo:</strong>&nbsp;Mares y aventuras</li>
-          <li><span class="icon">⭐</span><strong>Rasgo:</strong>&nbsp;Determinación</li>
+          <li>
+            <span class="icon">⚔️</span>
+            <div>
+              <strong>Estilo de Combate</strong>
+              <span>Santoryu (Tres Espadas)</span>
+            </div>
+          </li>
+          <li>
+            <span class="icon">🎯</span>
+            <div>
+              <strong>Objetivo</strong>
+              <span>Mejor espadachín del mundo</span>
+            </div>
+          </li>
+          <li>
+            <span class="icon">💪</span>
+            <div>
+              <strong>Rol</strong>
+              <span>Combatiente & Mano Derecha</span>
+            </div>
+          </li>
+          <li>
+            <span class="icon">🌊</span>
+            <div>
+              <strong>Haki</strong>
+              <span>Armamento, Observación, Conquistador</span>
+            </div>
+          </li>
         </ul>
-        <div style="margin-top:1rem">
-          <a class="btn" href="zoro.html">Ir a la ficha</a>
+        <div class="card-footer">
+          <a class="btn" href="zoro.html">Ver Perfil Completo</a>
         </div>
       </aside>
     </div>
+
+    <section class="features">
+      <div class="wrap">
+        <h2>Características Legendarias</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🗡️</div>
+            <h3>Maestro Espadachín</h3>
+            <p>Domina el estilo único de tres espadas, una técnica que solo él puede ejecutar a la perfección.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Lealtad Absoluta</h3>
+            <p>Compromiso inquebrantable con Luffy y la tripulación del Sombrero de Paja.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Poder Creciente</h3>
+            <p>Constantemente supera sus límites para enfrentar enemigos cada vez más poderosos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2026 — Sitio no oficial. Página de entrada para navegar a la información del personaje Zoro.
+    <div class="footer-content">
+      <p>© 2026 — Sitio de fans dedicado a Roronoa Zoro de One Piece</p>
+      <p class="footer-note">One Piece es propiedad de Eiichiro Oda y Shueisha</p>
+    </div>
   </footer>
 
-  <script>
-    // Pequeña mejora: confirma si el archivo de destino no existe (simulado) y sugiere crear zoro.html
-    document.getElementById('conocerBtn').addEventListener('click', (e) => {
-      // Evitar navegación automática para permitir flujo dentro del ejemplo si la página no existe
-      const target = 'zoro.html';
-      // Intentamos comprobar existencia usando fetch; si falla, mostramos mensaje (solo funciona en servidor)
-      fetch(target, { method: 'HEAD' }).then(res => {
-        if (!res.ok) {
-          e.preventDefault();
-          alert('La página "' + target + '" no se encontró. Crea "zoro.html" en el proyecto para enlazar la información completa.');
-        }
-      }).catch(() => {
-        e.preventDefault();
-        alert('No se pudo verificar "zoro.html". Si trabajas localmente, crea un archivo zoro.html en la carpeta del proyecto.');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-//
