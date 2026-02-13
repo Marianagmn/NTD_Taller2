@@ -6,6 +6,49 @@
   <title>Inicio — Roronoa Zoro</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Accesibilidad: Respeta preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Accesibilidad: Focus visible para navegación por teclado */
+    :focus-visible {
+      outline: 3px solid #ffd700;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Skip link accesible para saltar al contenido principal */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #00d97e;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      z-index: 100;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .skip-to-content:focus-visible {
+      top: 0;
+    }
+
+    /* Accesibilidad: Tamaños mínimos de hitbox (44x44px recomendado) */
+    button, a.btn, .card-link, [tabindex] {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .welcome-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -634,26 +677,29 @@
   </style>
 </head>
 <body>
-  <header>
+  <!-- Accesibilidad: Skip link para saltar al contenido principal -->
+  <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+  
+  <header role="banner">
     <div class="brand">
-      <div class="logo">⚔️</div>
+      <div class="logo" aria-hidden="true">⚔️</div>
       <div>
         <div class="brand-title">Roronoa Zoro</div>
         <div class="brand-subtitle">El Cazador de Piratas</div>
       </div>
     </div>
-    <nav aria-label="principal">
-      <a href="Inicio.html">Inicio</a>
+    <nav aria-label="Navegación principal">
+      <a href="Inicio.html" aria-current="page">Inicio</a>
       <a href="zoro.html">Introducción</a>
       <a href="ficha.html">Ficha Completa</a>
     </nav>
   </header>
 
-  <main class="welcome-container">
+  <main id="main-content" class="welcome-container" role="main">
     <!-- SECCIÓN HÉROE -->
-    <section class="welcome-hero">
+    <section class="welcome-hero" role="region" aria-labelledby="hero-title">
       <div class="hero-content">
-        <h1>Bienvenido a la Leyenda</h1>
+        <h1 id="hero-title">Bienvenido a la Leyenda</h1>
         <p class="hero-badge" style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">🏴‍☠️ Tripulación del Sombrero de Paja</p>
         <p>
           Explora el mundo del legendario espadachín Roronoa Zoro, el combatiente más determinado que jamás ha existido en los mares. 
@@ -668,54 +714,54 @@
     </section>
 
     <!-- SECCIÓN DE PRESENTACIÓN -->
-    <section class="cta-section">
-      <h2 class="cta-title">Conoce a Zoro</h2>
+    <section class="cta-section" role="region" aria-labelledby="cta-title">
+      <h2 id="cta-title" class="cta-title">Conoce a Zoro</h2>
       <p class="cta-description">
         Navega por nuestra completa guía dedicada a este extraordinario personaje. Desde su biografía hasta sus técnicas legendarias.
       </p>
-      <div class="cta-buttons">
-        <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <div class="cta-buttons" role="group" aria-label="Opciones de navegación principal">
+        <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;" aria-label="Ver introducción de Zoro">
           📖 Introducción a Zoro
         </a>
-        <a class="btn secondary" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <a class="btn secondary" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;" aria-label="Ver ficha completa de Zoro">
           📋 Ver Ficha Completa
         </a>
       </div>
     </section>
 
     <!-- NAVEGACIÓN RÁPIDA -->
-    <section aria-labelledby="navegacion-title">
+    <section role="region" aria-labelledby="navegacion-title">
       <h2 id="navegacion-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Explora Secciones</h2>
-      <div class="welcome-grid">
-        <div class="welcome-card">
-          <div class="card-icon">📖</div>
+      <div class="welcome-grid" role="list">
+        <div class="welcome-card" role="listitem">
+          <div class="card-icon" aria-hidden="true">📖</div>
           <h3 class="card-title">Introducción</h3>
           <p class="card-desc">
             Una breve pero completa introducción a quién es Zoro, su rol en la tripulación y por qué es un personaje tan importante.
           </p>
-          <a class="card-link" href="zoro.html">
+          <a class="card-link" href="zoro.html" aria-label="Ir a introducción de Zoro">
             Leer Introducción →
           </a>
         </div>
 
-        <div class="welcome-card">
-          <div class="card-icon">📋</div>
+        <div class="welcome-card" role="listitem">
+          <div class="card-icon" aria-hidden="true">📋</div>
           <h3 class="card-title">Ficha Completa</h3>
           <p class="card-desc">
             Toda la información detallada: biografía, técnicas de combate, datos curiosos, timeline y relaciones clave.
           </p>
-          <a class="card-link" href="ficha.html">
+          <a class="card-link" href="ficha.html" aria-label="Ver ficha completa de Zoro">
             Ver Ficha Completa →
           </a>
         </div>
 
-        <div class="welcome-card">
-          <div class="card-icon">⚡</div>
+        <div class="welcome-card" role="listitem">
+          <div class="card-icon" aria-hidden="true">⚡</div>
           <h3 class="card-title">Técnicas</h3>
           <p class="card-desc">
             Descubre el Santoryu, Asura, Onigiri y todas las técnicas legendarias que hacen de Zoro un combatiente imbatible.
           </p>
-          <a class="card-link" href="ficha.html#tecnicas">
+          <a class="card-link" href="ficha.html#tecnicas" aria-label="Ir a técnicas de Zoro">
             Explorar Técnicas →
           </a>
         </div>
@@ -723,30 +769,30 @@
     </section>
 
     <!-- CARACTERÍSTICAS DESTACADAS -->
-    <section style="margin-top: 3rem;">
-      <h2 style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo Que lo Hace Único</h2>
-      <div class="features-section">
-        <div class="feature-box">
-          <strong>🗡️ Maestro del Santoryu</strong>
+    <section role="region" aria-labelledby="features-title" style="margin-top: 3rem;">
+      <h2 id="features-title" style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Lo Que lo Hace Único</h2>
+      <div class="features-section" role="list">
+        <div class="feature-box" role="listitem">
+          <strong aria-hidden="false">🗡️ Maestro del Santoryu</strong>
           <p>El único espadachín capaz de dominar el estilo de tres espadas, combinando potencia, velocidad y precisión.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box" role="listitem">
           <strong>💪 Determinación Inquebrantable</strong>
           <p>Una voluntad de hierro que lo impulsa a superar cada límite y alcanzar nuevas alturas de poder constantemente.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box" role="listitem">
           <strong>🛡️ Lealtad Absoluta</strong>
           <p>Disposición total a sacrificar su vida por sus amigos y capitán, demostrando el verdadero significado del honor.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box" role="listitem">
           <strong>⚡ Dominio del Haki</strong>
           <p>Control magistral del Haki del Armamento, Observación y recientemente del legendario Haki del Conquistador.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box" role="listitem">
           <strong>🎯 Liderazgo Estratégico</strong>
           <p>Como segundo al mando de Luffy, demuestra inteligencia táctica y capacidad para guiar a la tripulación en batalla.</p>
         </div>
-        <div class="feature-box">
+        <div class="feature-box" role="listitem">
           <strong>🔥 Poder Creciente</strong>
           <p>Constantemente evoluciona y se fortalece, enfrentándose a enemigos cada vez más poderosos y legendarios.</p>
         </div>
