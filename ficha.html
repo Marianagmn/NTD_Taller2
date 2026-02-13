@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ficha Completa — Roronoa Zoro</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ficha-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .ficha-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .ficha-header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ficha-hero {
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(52, 211, 153, 0.1));
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .ficha-hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ficha-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .ficha-image {
+      background: linear-gradient(180deg, rgba(45, 212, 191, 0.15), rgba(52, 211, 153, 0.05));
+      border: 2px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      font-size: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-content {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .bio-paragraphs {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .bio-paragraphs p {
+      text-align: justify;
+    }
+
+    .datos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .dato-item {
+      background: rgba(45, 212, 191, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .dato-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .dato-value {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .curiosidad {
+      background: rgba(251, 191, 36, 0.05);
+      border-left: 4px solid var(--gold);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .curiosidad strong {
+      color: var(--gold);
+    }
+
+    .tecnica-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tecnica-list li {
+      background: rgba(52, 211, 153, 0.05);
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .tecnica-name {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .tecnica-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    .timeline-year {
+      background: var(--primary);
+      color: var(--text-dark);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .timeline-content {
+      background: rgba(45, 212, 191, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">⚔️</div>
+      <div>
+        <div class="brand-title">Roronoa Zoro</div>
+        <div class="brand-subtitle">El Cazador de Piratas</div>
+      </div>
+    </div>
+    <nav aria-label="principal">
+      <a href="Inicio.html">Inicio</a>
+      <a href="zoro.html">Introducción</a>
+      <a href="ficha.html">Ficha Completa</a>
+    </nav>
+  </header>
+
+  <main class="ficha-container">
+    <div class="breadcrumb">
+      <a href="Inicio.html">Home</a> / <a href="zoro.html">Introducción</a> / Ficha Completa
+    </div>
+
+    <!-- HEADER PRINCIPAL -->
+    <div class="ficha-header">
+      <section class="ficha-hero">
+        <h1>Roronoa Zoro</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem;">
+          <strong>El Cazador de Piratas</strong> & Combinatiente de la Tripulación Sombrero de Paja
+        </p>
+
+        <div class="ficha-stats">
+          <div class="stat-box">
+            <div class="stat-label">Apodo</div>
+            <div class="stat-value">El Cazador</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Estilo</div>
+            <div class="stat-value">Santoryu</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Tripulación</div>
+            <div class="stat-value">Sombrero de Paja</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Objetivo</div>
+            <div class="stat-value">Mejor espadachín</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ficha-image">
+        🗡️
+      </div>
+    </div>
+
+    <!-- BIOGRAFÍA -->
+    <section class="section">
+      <h2 class="section-title">📖 Biografía</h2>
+      <div class="section-content">
+        <div class="bio-paragraphs">
+          <p>
+            Roronoa Zoro es un cazarrecompensas legendario que se unió a Monkey D. Luffy en su búsqueda por convertirse en el Rey de los Piratas. 
+            Originalmente era un cazador de recompensas errante, y cuando conoció a Luffy, decidió seguirlo y enfocarse en su propio sueño: 
+            convertirse en el mejor espadachín del mundo.
+          </p>
+          <p>
+            Desde el inicio, Zoro demostró ser un guerrero formidable con una determinación sin igual. Su intelecto estratégico y capacidad de liderazgo 
+            lo han convertido en la mano derecha de Luffy, el segundo en mando de la Tripulación del Sombrero de Paja. A lo largo de sus viajes, 
+            ha afrontado innumerables peligros y enemigos poderosos, constantemente superando sus límites.
+          </p>
+          <p>
+            Su lealtad hacia Luffy es inquebrantable. Ha demostrado estar dispuesto a sacrificar su propia vida por su capitán y amigos, 
+            lo que lo define como mucho más que un simple guerrero: es un hombre de honor con principios inquebrantables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATOS PERSONALES -->
+    <section class="section">
+      <h2 class="section-title">📊 Datos Personales</h2>
+      <div class="section-content">
+        <div class="datos-grid">
+          <div class="dato-item">
+            <div class="dato-label">Nombre Completo</div>
+            <div class="dato-value">Roronoa (ロロノア) Zoro</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Edad</div>
+            <div class="dato-value">21 años (inicio), 23+ (actual)</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Rol en la Tripulación</div>
+            <div class="dato-value">Combatiente & Mano Derecha</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Lugar de Origen</div>
+            <div class="dato-value">Shimotsuki, Dawn Island</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Recompensa Actual</div>
+            <div class="dato-value">1.111B de Berries</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Haki</div>
+            <div class="dato-value">Armamento, Observación, Conquistador</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÉCNICAS PRINCIPALES -->
+    <section class="section">
+      <h2 class="section-title">⚡ Técnicas Principales</h2>
+      <div class="section-content">
+        <ul class="tecnica-list">
+          <li>
+            <span class="tecnica-name">🗡️ Santoryu (Estilo de Tres Espadas)</span>
+            <p class="tecnica-desc">Un estilo de combate único que permite a Zoro empuñar tres espadas simultáneamente, una en cada mano y otra con la boca.</p>
+          </li>
+          <li>
+            <span class="tecnica-name">💨 Onigiri (Secado de Niebla)</span>
+            <p class="tecnica-desc">Un corte giratoria que crea un patrón de espiral, capaz de desgarrar a los enemigos desde múltiples ángulos.</p>
+          </li>
+          <li>
+            <span class="tecnica-name">⚡ Tatsu Maki (Tornado del Dragón)</span>
+            <p class="tecnica-desc">Una técnica poderosa que combina velocidad y potencia, creando una sección devastadora de energía.</p>
+          </li>
+          <li>
+            <span class="tecnica-name">🔥 Asura</span>
+            <p class="tecnica-desc">La técnica más poderosa de Zoro, que canaliza su Haki del Conquistador en una forma demoníaca de múltiples cuerpos.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DATOS CURIOSOS -->
+    <section class="section">
+      <h2 class="section-title">🎯 Datos Curiososos</h2>
+      <div class="section-content">
+        <div class="curiosidad">
+          <strong>👁️ Ojo cicatrizado:</strong> Zoro perdió la visión de su ojo izquierdo durante un entrenamiento intenso. Decidió no revelar completamente cómo sucedió hasta mucho después en la serie.
+        </div>
+        <div class="curiosidad">
+          <strong>😴 Se pierde fácilmente:</strong> A pesar de su fuerza, Zoro es famoso por tener un sentido de dirección horrible, lo que lo lleva a perderse constantemente incluso en lugares simples.
+        </div>
+        <div class="curiosidad">
+          <strong>📖 Lector voraz:</strong> Zoro tiene una pasión por leer historias sobre grandes espadachines, especialmente sobre aquellos que se volvieron legendarios.
+        </div>
+        <div class="curiosidad">
+          <strong>🍢 Amor por la comida:</strong> Disfruta tremendamente de todo tipo de alimentos, especialmente las bolas de carne y los licores fuertes.
+        </div>
+        <div class="curiosidad">
+          <strong>🎭 Entrenamiento constante:</strong> Incluso en tiempos de paz, Zoro entrena obsesivamente para mejorar sus habilidades y mantenerse fuerte.
+        </div>
+        <div class="curiosidad">
+          <strong>⚰️ Disposición a morir:</strong> Ha demostrado innumerables veces que prefiere la muerte antes que ser deshonrado o traicionar a sus amigos.
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section">
+      <h2 class="section-title">📅 Hitos Importantes</h2>
+      <div class="section-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">Pasado</div>
+            <div class="timeline-content">
+              <strong>Orígenes como Cazarrecompensas</strong><br>
+              Zoro comienza su vida como cazador de recompensas, ganando reputación en toda la región.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Capítulo 1</div>
+            <div class="timeline-content">
+              <strong>Encuentro con Luffy</strong><br>
+              Se encuentra con Luffy y, tras ser liberado por él, juura convertirse en el mejor espadachín del mundo.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Mid Series</div>
+            <div class="timeline-content">
+              <strong>Adquisición de Haki</strong><br>
+              Zoro domina el Haki del Armamento y el Haki de la Observación, aumentando dramáticamente su poder.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Reciente</div>
+            <div class="timeline-content">
+              <strong>Despertar del Haki del Conquistador</strong><br>
+              Zoro despierta su capacidad de usar el Haki del Conquistador, confirmando su estatus como guerrero legendario.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELACIONES -->
+    <section class="section">
+      <h2 class="section-title">🤝 Relaciones Clave</h2>
+      <div class="section-content">
+        <div class="datos-grid">
+          <div class="dato-item">
+            <div class="dato-label">Capitán</div>
+            <div class="dato-value">Monkey D. Luffy</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Mejor Amigo</div>
+            <div class="dato-value">Nico Robin</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Rival Amistoso</div>
+            <div class="dato-value">Sanji (Cocinero)</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Maestro de Entrenamiento</div>
+            <div class="dato-value">Dracule Mihawk</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Aliado</div>
+            <div class="dato-value">Kikunojo</div>
+          </div>
+          <div class="dato-item">
+            <div class="dato-label">Enemigos Principales</div>
+            <div class="dato-value">King, Kaido, Apoo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <div class="cta-group" style="justify-content: center;">
+      <a class="btn" href="zoro.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        ← Volver a Introducción
+      </a>
+      <a class="btn secondary" href="Inicio.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        🏠 Ir a Inicio
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 — Sitio dedicado a Roronoa Zoro de One Piece</p>
+      <p class="footer-note">One Piece es propiedad de Eiichiro Oda y Shueisha</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

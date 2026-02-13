@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zoro — Introducción</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .intro-panel {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    .intro-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .intro-hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro-hero h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .intro-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb {
+      margin: 1rem 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">⚔️</div>
+      <div>
+        <div class="brand-title">Roronoa Zoro</div>
+        <div class="brand-subtitle">El Cazador de Piratas</div>
+      </div>
+    </div>
+    <nav aria-label="principal">
+      <a href="Inicio.html">Inicio</a>
+      <a href="zoro.html">Introducción</a>
+      <a href="ficha.html">Ficha Completa</a>
+    </nav>
+  </header>
+
+  <main class="intro-panel">
+    <div class="breadcrumb">
+      <a href="Inicio.html">Home</a> / Introducción
+    </div>
+
+    <article class="intro-card">
+      <section class="intro-hero">
+        <h1>Zoro — Introducción</h1>
+        <p>Conoce al legendario espadachín que busca convertirse en el mejor del mundo. Un viaje de determinación, honor y poder sin igual.</p>
+      </section>
+
+      <section style="margin: 2rem 0;">
+        <h2 style="color: var(--accent); margin-bottom: 1rem;">¿Quién es Zoro?</h2>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          Roronoa Zoro es el combatiente principal de la tripulación del Sombrero de Paja, conocido por su dominio del único estilo de combate con tres espadas. 
+          Con una determinación inquebrantable y lealtad absoluta a su capitán Monkey D. Luffy, Zoro ha superado innumerables desafíos y enemigos poderosos 
+          en su búsqueda por convertirse en el mejor espadachín del mundo.
+        </p>
+      </section>
+
+      <section style="margin: 2rem 0;">
+        <h2 style="color: var(--accent); margin-bottom: 1rem;">Características Principales</h2>
+        <div class="stats-mini" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+          <div class="stat-item" style="background: rgba(45, 212, 191, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div class="stat-value" style="color: var(--primary); font-size: 1.8rem; font-weight: 700;">3</div>
+            <div class="stat-label" style="color: var(--text-muted);">Espadas</div>
+          </div>
+          <div class="stat-item" style="background: rgba(52, 211, 153, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div class="stat-value" style="color: var(--accent); font-size: 1.8rem; font-weight: 700;">Santoryu</div>
+            <div class="stat-label" style="color: var(--text-muted);">Estilo</div>
+          </div>
+          <div class="stat-item" style="background: rgba(251, 191, 36, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div class="stat-value" style="color: var(--gold); font-size: 1.8rem; font-weight: 700;">∞</div>
+            <div class="stat-label" style="color: var(--text-muted);">Determinación</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin: 2rem 0;">
+        <h2 style="color: var(--accent); margin-bottom: 1rem;">Lo que descubrirás</h2>
+        <ul style="color: var(--text-muted); line-height: 2; list-style-position: inside;">
+          <li>✓ Historia completa desde sus orígenes</li>
+          <li>✓ Técnicas y habilidades de combate</li>
+          <li>✓ Datos curiosos y trivia</li>
+          <li>✓ Evolución a lo largo de la serie</li>
+          <li>✓ Relaciones y lealtades</li>
+        </ul>
+      </section>
+
+      <div class="cta-group">
+        <a class="btn" href="ficha.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          📋 Ver Ficha Completa
+        </a>
+        <a class="btn secondary" href="Inicio.html" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          ← Volver a Inicio
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 — Sitio dedicado a Roronoa Zoro de One Piece</p>
+      <p class="footer-note">One Piece es propiedad de Eiichiro Oda y Shueisha</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
