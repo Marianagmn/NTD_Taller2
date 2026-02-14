@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,54 +7,171 @@
   <title>Zoro — Introducción</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Accesibilidad: Respeta preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Accesibilidad: Focus visible para navegación por teclado */
+    :focus-visible {
+      outline: 3px solid #ffd700;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Skip link accesible */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #00d97e;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      z-index: 100;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .skip-to-content:focus-visible {
+      top: 0;
+    }
+
+    /* Accesibilidad: Tamaños mínimos de hitbox */
+    button, a.btn, .intro-btn, [tabindex] {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .intro-panel {
       max-width: 900px;
-      margin: 3rem auto;
-      padding: 2rem;
+      margin: 1.5rem auto;
+      padding: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .intro-panel {
+        margin: 2rem auto;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-panel {
+        margin: 3rem auto;
+        padding: 2rem;
+      }
     }
 
     .intro-card {
-      background: var(--card-bg);
-      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, rgba(0, 217, 126, 0.08), rgba(255, 107, 53, 0.08));
+      border: 2px solid rgba(45, 212, 191, 0.3);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 1.25rem;
       backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0, 217, 126, 0.1);
+    }
+
+    @media (min-width: 640px) {
+      .intro-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-card {
+        padding: 2rem;
+      }
     }
 
     .intro-hero {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .intro-hero {
+        margin-bottom: 2rem;
+      }
     }
 
     .intro-hero h1 {
-      font-size: 2.5rem;
-      margin: 1rem 0;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      font-size: 1.75rem;
+      margin: 0.75rem 0;
+      background: linear-gradient(135deg, #00d97e 0%, #ff6b35 50%, #ffd700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    @media (min-width: 640px) {
+      .intro-hero h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
     .intro-hero p {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       max-width: 600px;
-      margin: 1rem auto;
+      margin: 0.75rem auto;
+    }
+
+    @media (min-width: 640px) {
+      .intro-hero p {
+        font-size: 1rem;
+        margin: 1rem auto;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-hero p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
     }
 
     .cta-group {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       justify-content: center;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
       flex-wrap: wrap;
     }
 
+    @media (min-width: 640px) {
+      .cta-group {
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+    }
+
     .breadcrumb {
-      margin: 1rem 0;
+      margin-bottom: 1rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+    }
+
+    @media (min-width: 640px) {
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
     }
 
     .breadcrumb a {
@@ -64,65 +182,391 @@
     .breadcrumb a:hover {
       text-decoration: underline;
     }
+
+    .intro-section {
+      margin: 1.25rem 0;
+    }
+
+    @media (min-width: 640px) {
+      .intro-section {
+        margin: 1.5rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-section {
+        margin: 2rem 0;
+      }
+    }
+
+    .intro-section h2 {
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+    }
+
+    @media (min-width: 640px) {
+      .intro-section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .intro-section h2 {
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #00d97e 0%, #ff6b35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    .intro-section p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 640px) {
+      .intro-section p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+    }
+
+    .intro-section ul {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      list-style-position: inside;
+    }
+
+    @media (min-width: 640px) {
+      .intro-section ul {
+        font-size: 1rem;
+        line-height: 2;
+      }
+    }
+
+    .intro-section ul li:before {
+      content: '✦ ';
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .stats-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .stats-mini {
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .stat-item {
+      background: linear-gradient(135deg, rgba(0, 217, 126, 0.15), rgba(255, 107, 53, 0.1));
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(0, 217, 126, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    @media (min-width: 640px) {
+      .stat-item {
+        padding: 1rem;
+      }
+    }
+
+    .stat-item:hover {
+      box-shadow: 0 8px 20px rgba(0, 217, 126, 0.3);
+      border-color: rgba(255, 215, 0, 0.6);
+    }
+
+    .stat-value {
+      color: #00d97e;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    @media (min-width: 640px) {
+      .stat-value {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .stat-value {
+        font-size: 1.8rem;
+      }
+    }
+
+    .stat-label {
+      color: #ffd700;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    @media (min-width: 640px) {
+      .stat-label {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ===== ANIMACIONES ===== */
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(45, 212, 191, 0.6);
+        transform: scale(1.02);
+      }
+    }
+
+    header {
+      animation: slideInDown 0.6s ease-out;
+    }
+
+    .breadcrumb {
+      animation: fadeIn 0.6s ease-out 0.2s both;
+    }
+
+    .intro-card {
+      animation: slideInUp 0.8s ease-out 0.1s both;
+    }
+
+    .intro-hero h1 {
+      animation: slideInUp 0.8s ease-out 0.2s both;
+    }
+
+    .intro-hero p {
+      animation: slideInUp 0.8s ease-out 0.3s both;
+    }
+
+    .intro-section {
+      animation: slideInUp 0.7s ease-out calc(0.1s * var(--sindex, 0)) both;
+    }
+
+    .intro-section:nth-child(2) { --sindex: 1; }
+    .intro-section:nth-child(3) { --sindex: 2; }
+    .intro-section:nth-child(4) { --sindex: 3; }
+
+    .stat-item {
+      animation: scaleIn 0.6s ease-out calc(0.1s * var(--statindex, 0)) both;
+    }
+
+    .stats-mini .stat-item:nth-child(1) { --statindex: 0; }
+    .stats-mini .stat-item:nth-child(2) { --statindex: 1; }
+    .stats-mini .stat-item:nth-child(3) { --statindex: 2; }
+
+    .stat-item:hover {
+      animation: glow 1.5s ease-in-out infinite;
+    }
+
+    .cta-group {
+      animation: slideInUp 0.8s ease-out 0.4s both;
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    footer {
+      animation: slideInUp 0.6s ease-out 0.5s both;
+    }
+    
+    /* Fondo animado para Zoro: capas, parallax y gradiente */
+    #bg-wrap {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+      display: block;
+      transform: translateZ(0);
+      transition: opacity 0.25s linear;
+    }
+
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      will-change: transform, opacity;
+    }
+
+    .bg-image {
+      background-image: url('zoro-bg-4k.jpg'); /* Reemplaza por tu imagen 4K o usa URL */
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: saturate(0.9) contrast(1.05) brightness(0.95);
+      transform: translate3d(0,0,0);
+    }
+
+    .bg-gradient {
+      background: linear-gradient(180deg, rgba(2,6,23,0.35), rgba(0,0,0,0.6) 60%);
+      mix-blend-mode: multiply;
+      opacity: 0.9;
+    }
+
+    #bg-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Asegurar que el contenido esté por encima */
+    header, main, footer, .intro-panel, .intro-card {
+      position: relative;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
-  <header>
+  <!-- Accesibilidad: Skip link para saltar al contenido principal -->
+  <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+  
+  <header role="banner">
     <div class="brand">
-      <div class="logo">⚔️</div>
+      <div class="logo" aria-hidden="true">⚔️</div>
       <div>
         <div class="brand-title">Roronoa Zoro</div>
         <div class="brand-subtitle">El Cazador de Piratas</div>
       </div>
     </div>
-    <nav aria-label="principal">
+    <nav aria-label="Navegación principal">
       <a href="Inicio.html">Inicio</a>
-      <a href="zoro.html">Introducción</a>
+      <a href="zoro.html" aria-current="page">Introducción</a>
       <a href="ficha.html">Ficha Completa</a>
     </nav>
   </header>
 
-  <main class="intro-panel">
-    <div class="breadcrumb">
+  <main id="main-content" class="intro-panel" role="main">
+    <div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
       <a href="Inicio.html">Home</a> / Introducción
     </div>
 
     <article class="intro-card">
-      <section class="intro-hero">
-        <h1>Zoro — Introducción</h1>
+      <section class="intro-hero" role="region" aria-labelledby="intro-title">
+        <h1 id="intro-title">Zoro — Introducción</h1>
         <p>Conoce al legendario espadachín que busca convertirse en el mejor del mundo. Un viaje de determinación, honor y poder sin igual.</p>
       </section>
 
-      <section style="margin: 2rem 0;">
-        <h2 style="color: var(--accent); margin-bottom: 1rem;">¿Quién es Zoro?</h2>
-        <p style="color: var(--text-muted); line-height: 1.8;">
+      <section class="intro-section" aria-labelledby="quien-section">
+        <h2 id="quien-section">¿Quién es Zoro?</h2>
+        <p>
           Roronoa Zoro es el combatiente principal de la tripulación del Sombrero de Paja, conocido por su dominio del único estilo de combate con tres espadas. 
           Con una determinación inquebrantable y lealtad absoluta a su capitán Monkey D. Luffy, Zoro ha superado innumerables desafíos y enemigos poderosos 
           en su búsqueda por convertirse en el mejor espadachín del mundo.
         </p>
       </section>
 
-      <section style="margin: 2rem 0;">
-        <h2 style="color: var(--accent); margin-bottom: 1rem;">Características Principales</h2>
-        <div class="stats-mini" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
-          <div class="stat-item" style="background: rgba(45, 212, 191, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
-            <div class="stat-value" style="color: var(--primary); font-size: 1.8rem; font-weight: 700;">3</div>
-            <div class="stat-label" style="color: var(--text-muted);">Espadas</div>
+      <section class="intro-section" aria-labelledby="caract-section">
+        <h2 id="caract-section">Características Principales</h2>
+        <div class="stats-mini">
+          <div class="stat-item">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Espadas</div>
           </div>
-          <div class="stat-item" style="background: rgba(52, 211, 153, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
-            <div class="stat-value" style="color: var(--accent); font-size: 1.8rem; font-weight: 700;">Santoryu</div>
-            <div class="stat-label" style="color: var(--text-muted);">Estilo</div>
+          <div class="stat-item">
+            <div class="stat-value">Santoryu</div>
+            <div class="stat-label">Estilo</div>
           </div>
-          <div class="stat-item" style="background: rgba(251, 191, 36, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
-            <div class="stat-value" style="color: var(--gold); font-size: 1.8rem; font-weight: 700;">∞</div>
-            <div class="stat-label" style="color: var(--text-muted);">Determinación</div>
+          <div class="stat-item">
+            <div class="stat-value">∞</div>
+            <div class="stat-label">Determinación</div>
           </div>
         </div>
       </section>
 
-      <section style="margin: 2rem 0;">
-        <h2 style="color: var(--accent); margin-bottom: 1rem;">Lo que descubrirás</h2>
-        <ul style="color: var(--text-muted); line-height: 2; list-style-position: inside;">
+      <section class="intro-section" aria-labelledby="descubre-section">
+        <h2 id="descubre-section">Lo que descubrirás</h2>
+        <ul>
           <li>✓ Historia completa desde sus orígenes</li>
           <li>✓ Técnicas y habilidades de combate</li>
           <li>✓ Datos curiosos y trivia</li>
@@ -150,5 +594,45 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function(){
+      const bgImage = document.querySelector('.bg-image');
+      const bgWrap = document.getElementById('bg-wrap');
+      let width = window.innerWidth, height = window.innerHeight;
+
+      // Parallax suave por movimiento del ratón
+      let rx = 0, ry = 0;
+      let cx = 0, cy = 0;
+
+      function onMove(e){
+        const x = (e.clientX / width) - 0.5;
+        const y = (e.clientY / height) - 0.5;
+        rx = x * 30;
+        ry = y * 18;
+      }
+
+      function animate(){
+        cx += (rx - cx) * 0.08;
+        cy += (ry - cy) * 0.08;
+        if(bgImage) bgImage.style.transform = `translate3d(${cx*0.8}px, ${cy*0.6}px, 0) scale(1.02)`;
+        const gradient = document.querySelector('.bg-gradient');
+        if(gradient) gradient.style.transform = `translate3d(${cx*0.4}px, ${cy*0.25}px, 0)`;
+        requestAnimationFrame(animate);
+      }
+
+      // Reducir actividad cuando pestaña oculta
+      document.addEventListener('visibilitychange', ()=>{
+        if(document.hidden){
+          bgWrap.style.opacity = '0.8';
+        } else {
+          bgWrap.style.opacity = '1';
+        }
+      });
+
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('resize', ()=>{ width = window.innerWidth; height = window.innerHeight; });
+      animate();
+    })();
+  </script>
 </body>
 </html>
