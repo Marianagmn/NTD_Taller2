@@ -1045,10 +1045,10 @@ class HeaderScroll {
 
   update() {
     if (window.pageYOffset > 50) {
-      this.header.style.background = 'rgba(11, 20, 18, 0.95)';
+      this.header.style.background = 'rgba(10, 14, 26, 0.95)';
       this.header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.5)';
     } else {
-      this.header.style.background = 'rgba(11, 20, 18, 0.75)';
+      this.header.style.background = 'rgba(10, 14, 26, 0.75)';
       this.header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
     }
   }
