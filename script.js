@@ -1518,42 +1518,6 @@ class App {
 // Iniciar aplicación
 const app = new App();
 
-// Sistema de menú móvil
-const mobileMenu = {
-  init() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    if (menuToggle && nav) {
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        nav.classList.toggle('active');
-      });
-
-      // Cerrar menú al hacer click en un enlace
-      nav.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          menuToggle.classList.remove('active');
-          nav.classList.remove('active');
-        }
-      });
-
-      // Cerrar menú al hacer click fuera
-      document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
-          menuToggle.classList.remove('active');
-          nav.classList.remove('active');
-        }
-      });
-    }
-  }
-};
-
-// Inicializar menú móvil
-document.addEventListener('DOMContentLoaded', () => {
-  mobileMenu.init();
-});
-
 // Exportar para uso externo
 window.ZoroSite = {
   notification: (msg, type) => app.notificationSystem.show(msg, type),
