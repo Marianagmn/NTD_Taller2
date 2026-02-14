@@ -1360,6 +1360,9 @@ class App {
     RippleEffect.init();
     SmoothScroll.init();
 
+    // Hamburger menu toggle
+    this.setupHamburgerMenu();
+
     // Cursor personalizado (solo en desktop)
     if (window.innerWidth > 1024) {
       this.magneticCursor = new MagneticCursor();
@@ -1480,6 +1483,38 @@ class App {
         }
       }
     });
+  }
+
+  setupHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', () => {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+
+      // Close menu when clicking outside or on a link
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        }
+      });
+
+      // Close menu when clicking on a nav link
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        }
+      });
+    }
   }
 
   welcomeMessage() {
